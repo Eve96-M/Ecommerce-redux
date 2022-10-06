@@ -1,0 +1,30 @@
+.form-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+}
+
+.form-outline{
+    width: 350px;
+    padding: 1rem;
+    border-radius: 2rem;
+    border:1px solid gainsboro;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.user-Info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 68, 0, 0.712);
+    border-radius: 1rem;
+    margin: 0.5rem 0;
+    padding: .3rem;
+    height: 100px;
+    width: 100%;
+}
+
+.user-Info p{
+    margin: 0;
+}

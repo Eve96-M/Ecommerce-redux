@@ -1,0 +1,12 @@
+ <Navbar bg="primary" variant="dark">
+                <Container>
+                    <Navbar.Brand href="#home" to="/" as={Link}>E-Commerce</Navbar.Brand>
+                    <Nav className="me-auto">
+                        <Nav.Link href="#home" as={Link} to="/Login">Login</Nav.Link>
+                        <Nav.Link href="#features" as={Link} to="/Purchases">Purchases</Nav.Link>
+                        <Nav.Link href="#pricing" as={Link} to="/Cart">Cart</Nav.Link>
+                        <Nav.Link onClick={handleShow}>Cart (Sidebar)</Nav.Link>
+                        <Nav.Link onClick={logout}>Logout</Nav.Link>
+                    </Nav>
+                </Container>
+            </Navbar>

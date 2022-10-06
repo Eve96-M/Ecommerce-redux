@@ -1,0 +1,16 @@
+.cart-wrapper{
+    list-style: none;
+    padding: 0;
+}
+
+.cart-container{
+    border: 1px solid gainsboro;
+    margin: 1rem 0;
+    background-color: whitesmoke;
+    padding: .5rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.cart-container span{
+    font-weight: bold;
+}

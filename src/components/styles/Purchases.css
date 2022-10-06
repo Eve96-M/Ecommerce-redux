@@ -1,0 +1,33 @@
+.purchases-list{
+    list-style: none;
+    padding:0;
+}
+
+.purchasesContainer{
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 3rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.date{
+    border:1px solid gainsboro;
+    margin: 0;
+    padding: 0.1rem 1rem;
+    background-color: whitesmoke;
+}
+
+.product{
+    border:1px solid gainsboro;
+    background-color: whitesmoke;
+    padding: 0.5rem 1rem;
+}
+
+.productData{
+    margin: 0;
+    font-weight: 200;
+}
+
+.productData span{
+    font-weight: bold;
+}

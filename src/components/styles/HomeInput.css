@@ -1,0 +1,55 @@
+.inputWrapper{
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 2rem 0 2rem;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.filterContainer{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    background: white;
+    padding: .5rem;
+    z-index: 15;
+    width:300px;
+    top:0;
+    right:0;
+    height: 100%;
+    border: transparent;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    transition: 0.4s ease-in-out;
+    transform: translateX(100%);
+}
+
+.active{
+    transform: translateX(0rem);
+}
+
+.showFilter{
+    display: flex;
+    border: transparent;
+    background-color: transparent;
+    width: 80px;
+    color:gainsboro;
+    fill: gainsboro;
+}
+
+.showFilter:hover{
+    color:orangered;
+    fill: orangered;
+}
+
+.closeFilters{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-end;
+    margin: 0 .2rem;
+    border: transparent;
+    font-size: 20px;
+    background-color: transparent;
+    width:30px;
+    height: 30px;
+}
