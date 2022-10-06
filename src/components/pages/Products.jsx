@@ -1,21 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import '../styles/ProductDetail.css'
 import Carousel from 'react-bootstrap/Carousel'
 import { addCartThunk } from '../../store/slices/cartproducts.slice';
 const Products = () => {
     const { id } = useParams()
+    const navigate = useNavigate()
 
     const productList = useSelector((state) => state.product)
 
-    const [quantity,setQuantity] = useState(1)
+    const [quantity, setQuantity] = useState(1)
     const dispatch = useDispatch()
     const productDetail = productList.find(product => product.id === Number(id))
     const relatedProduct = productList.filter(product => product.category.id === productDetail.category.id)
 
-    const addToCart = () =>{
-        alert("Añadiendo"+ quantity)
+    const addToCart = () => {
+        alert("Añadiendo" + quantity)
         const product = {
             id: id,
             quantity: quantity
@@ -23,9 +24,9 @@ const Products = () => {
         dispatch(addCartThunk(product))
     }
 
-    useEffect(() =>{
+    useEffect(() => {
         setQuantity(1)
-    },[id])
+    }, [id])
 
     return (
         <div>
@@ -63,7 +64,7 @@ const Products = () => {
                             <h3 className='priceText'><small>price</small><br />${productDetail?.price}</h3>
                         </div>
                         <div className='quantity'>
-                            <button className='minus' onClick={ () => setQuantity(quantity - 1)} disabled={quantity === 1}>-</button>
+                            <button className='minus' onClick={() => setQuantity(quantity - 1)} disabled={quantity === 1}>-</button>
                             <div className='productCount'>{quantity}</div>
                             <button className='plus' onClick={() => setQuantity(quantity + 1)}>+</button>
                         </div>
@@ -72,12 +73,26 @@ const Products = () => {
                     <p className='detailDescription'>{productDetail?.description}</p>
                 </div>
             </div>
-            <div>
+            <div className='productWrapper'>
                 <ul>
                     {
                         relatedProduct.map(product => (
-                            <li>
-                                <Link to={`/products/${product.id}`}>{product.title}</Link>
+                            <li className='productCard' key={product.id}>
+                                <div className='imageWrapper'>
+                                    <img src={product.productImgs[0]}
+                                        alt=""
+                                        className="product-Img"
+                                        onClick={() => navigate(`/products/${product.id}`)}
+                                    />
+                                </div>
+                                <div
+                                    className="detailsWrapper"
+                                    onClick={() => navigate(`/products/${product.id}`)}
+                                >
+                                    <Link to={`/products/${product.id}`} className="productName">{product.title}</Link>
+                                    <h3 className="productPrice"><small>price</small><br />${product.price}</h3>
+                                </div>
+                                
                             </li>
                         ))
                     }

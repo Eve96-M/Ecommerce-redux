@@ -3,3 +3,10 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+.purchaseContainer{
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 1rem ;
+}
