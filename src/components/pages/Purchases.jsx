@@ -16,12 +16,12 @@ const Purchases = () => {
 
     return (
         <div>
-            <h1>Purchases</h1>
+            <h1 className="purchasesTitle">Purchases</h1>
             <ul className='purchases-list'>
                 {
                     purchases.map(purchase => (
                         <li key={purchase.id} className='purchasesContainer'>
-                            <h2 className='date'>{purchase.createdAt}</h2>
+                            <h4 className='date'>{purchase.createdAt}</h4>
                             {purchase.cart.products.map(products => (
                                 <div key={products.id} className="product" >
                                     <h5 onClick={() => navigate(`/products/${products.id}`)} className="productData">
