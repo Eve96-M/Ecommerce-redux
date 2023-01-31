@@ -16,7 +16,7 @@ const Products = () => {
     const relatedProduct = productList.filter(product => product.category.id === productDetail.category.id)
 
     const addToCart = () => {
-        alert("Añadiendo" + quantity)
+        alert("Añadiendo " + quantity)
         const product = {
             id: id,
             quantity: quantity

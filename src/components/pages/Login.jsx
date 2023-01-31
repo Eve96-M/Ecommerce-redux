@@ -12,7 +12,7 @@ const Login = () => {
     //john@gmail.com john1234
     const submit = (data) => {
         console.log(data)
-        axios.post('https://ecommerce-api-react.herokuapp.com/api/v1/users/login', data)
+        axios.post('https://e-commerce-api.academlo.tech/api/v1/users/login', data)
             .then(res => {
                 localStorage.setItem("token", res.data.data.token)
                 alert("User logged")
